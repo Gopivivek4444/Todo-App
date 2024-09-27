@@ -1,0 +1,60 @@
+/* App.css */
+
+/* Heading animation */
+h1 {
+  color: #ff6347;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  animation: fadeIn 2s ease-in-out;
+}
+
+/* Todo List animation */
+li {
+  list-style-type: none;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  font-family: 'Poppins', sans-serif;
+  transition: transform 0.2s ease-in-out;
+}
+
+li:hover {
+  background-color: black;
+  transform: scale(1.05);
+}
+
+/* li.completed {
+  text-decoration: line-through;
+  color: gray;
+} */
+
+/* Delete button style */
+span[role="button"] {
+  transition: color 0.3s;
+}
+
+span[role="button"]:hover {
+  color: red;
+}
+
+/* Input form and button */
+.input-group input {
+  border-radius: 20px 0 0 20px;
+}
+
+.input-group button {
+  border-radius: 0 20px 20px 0;
+  background-color: black;
+  color: green;
+  transition: background-color 0.3s;
+}
+
+.input-group button:hover {
+  background-color: black;
+  color: red;
+}
+
+/* Keyframes for animation */
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
