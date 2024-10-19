@@ -26,6 +26,10 @@ function TodoList({ todosProps, setTodosProps }) {
     setTodosProps(updatedTodos);
   }
 
+  if(!todosProps.length){
+    return <h3 className='text-center text-danger'>No Todos Left</h3>
+  }
+
   return (
     <ul className="list-group">
       {todosProps.map(todo => (

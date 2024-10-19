@@ -36,6 +36,16 @@ span[role="button"]:hover {
   color: red;
 }
 
+.button{
+  transition: color 0.3s;
+  background-color: black;
+  color: white;
+}
+
+.button:hover{
+  color: red;
+}
+
 /* Input form and button */
 .input-group input {
   border-radius: 20px 0 0 20px;
@@ -57,4 +67,8 @@ span[role="button"]:hover {
 @keyframes fadeIn {
   0% { opacity: 0; }
   100% { opacity: 1; }
+}
+
+.text-yellow{
+  color: yellow;
 }
