@@ -6,9 +6,9 @@ const UserContext = createContext();
 export default function App() {
 
     const [todos, setTodos] = useState([
-        {id: 1, text: "Hi", done: false},
-        {id: 2, text: "Gopi", done: false},
-        {id: 3, text: "Ram", done: false}
+        {id: 1, text: "Welcome", done: false},
+        {id: 2, text: "To", done: false},
+        {id: 3, text: "Todo App", done: false}
     ])
     return(
         <UserContext.Provider value={{todos, setTodos}}>
@@ -108,11 +108,13 @@ export function AddTodo1(){
         
     }
     return(
+        <div className="formSection">
         <form onSubmit={HandleAddTodo}>
             <div className="input-group mb-3">
             <input className="form-control" placeholder="Add Todo" name="AddTodo" ref={inputReference}/>
             <button className="btn btn-outline-secondary"type="submit">Add Todo</button>     
             </div>       
         </form>
+        </div>
     )
 }

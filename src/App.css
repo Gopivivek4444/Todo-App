@@ -72,3 +72,7 @@ span[role="button"]:hover {
 .text-yellow{
   color: yellow;
 }
+
+.formSection{
+  margin-top: 20px;
+}
