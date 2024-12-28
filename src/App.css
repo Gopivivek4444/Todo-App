@@ -60,7 +60,7 @@ span[role="button"]:hover {
   font-weight: 700;
   border: none;
   background-color: #d8d7d5;
-  color: green;
+  color: black;
   transition: background-color 0.3s;
 }
 

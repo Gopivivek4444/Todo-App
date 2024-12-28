@@ -54,7 +54,7 @@ if(!todos.length){
             onDoubleClick={() => HandleToggleTodo(todo)}
             key={todo.id}
             >
-                <span style={{color: todo.done ? 'red' : 'green' ,textDecoration: todo.done?"line-through":"" ,fontWeight:"bold"}}>
+                <span style={{color: todo.done ? 'red' : 'black' ,textDecoration: todo.done?"line-through":"" ,fontWeight:"bold"}}>
                      {todo.text}
                 </span>  
                 <DeleteTodo todo = {todo}/>
