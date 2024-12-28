@@ -1,4 +1,4 @@
-import { createContext, useContext, useRef, useState } from "react"
+import { createContext, useContext, useEffect, useRef, useState } from "react"
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.css';
 const UserContext = createContext();
@@ -10,6 +10,8 @@ export default function App() {
         {id: 2, text: "To", done: false},
         {id: 3, text: "Todo App", done: false}
     ])
+   
+    
     return(
         <UserContext.Provider value={{todos, setTodos}}>
         <>
@@ -52,7 +54,7 @@ if(!todos.length){
             onDoubleClick={() => HandleToggleTodo(todo)}
             key={todo.id}
             >
-                <span style={{color: todo.done ? 'red' : 'green' ,textDecoration: todo.done?"line-through":"" }}>
+                <span style={{color: todo.done ? 'red' : 'green' ,textDecoration: todo.done?"line-through":"" ,fontWeight:"bold"}}>
                      {todo.text}
                 </span>  
                 <DeleteTodo todo = {todo}/>
@@ -71,13 +73,17 @@ if(!todos.length){
     function HandleDeleteTodo(){
 
     const newTodos = todos.filter((t) => t.id !== todo.id)
+    
+    localStorage.setItem('Todos',JSON.stringify(newTodos));
 
     setTodos(newTodos);
     }
 
     return(
       <button className = "button text-" onClick={HandleDeleteTodo}>
-        Delete
+        <span class="material-symbols-outlined">
+            delete
+        </span>
       </button>
     // <span role="button" style={{marginLeft:10}} onClick={HandleDeleteTodo}>
     //     X
@@ -91,6 +97,12 @@ export function AddTodo1(){
 
     const inputReference = useRef();
 
+    useEffect(() =>{
+        // localStorage.setItem('Todos',JSON.stringify(todos));
+        const savedTodos = JSON.parse(localStorage.getItem('Todos')) || [];
+        setTodos(savedTodos);
+    },[setTodos]);
+
     function HandleAddTodo(event){
         event.preventDefault();
         const text = event.target.elements.AddTodo.value;
@@ -99,8 +111,11 @@ export function AddTodo1(){
             text,
             done:false
         }
-
-        setTodos((previousTodos) => previousTodos.concat(todo) )
+        const savedTodos = JSON.parse(localStorage.getItem('Todos')) || [];
+        const updatedTodos = [...savedTodos, todo];
+        setTodos(updatedTodos);
+        localStorage.setItem('Todos', JSON.stringify(updatedTodos));
+        // setTodos((previousTodos) => previousTodos.concat(todo) )
 
         inputReference.current.value = ""; 
        

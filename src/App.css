@@ -18,7 +18,7 @@ li {
 }
 
 li:hover {
-  background-color: black;
+  background-color: #adb3bc;
   transform: scale(1.05);
 }
 
@@ -38,8 +38,9 @@ span[role="button"]:hover {
 
 .button{
   transition: color 0.3s;
-  background-color: black;
-  color: white;
+  background: none;
+  border: none;
+  color: black;
 }
 
 .button:hover{
@@ -49,19 +50,26 @@ span[role="button"]:hover {
 /* Input form and button */
 .input-group input {
   border-radius: 20px 0 0 20px;
+  outline: none;
 }
+
 
 .input-group button {
   border-radius: 0 20px 20px 0;
-  background-color: black;
+  font-size: large;
+  font-weight: 700;
+  border: none;
+  background-color: #d8d7d5;
   color: green;
   transition: background-color 0.3s;
 }
 
 .input-group button:hover {
-  background-color: black;
+  background-color: #d8d7d5;
   color: red;
 }
+
+
 
 /* Keyframes for animation */
 @keyframes fadeIn {
